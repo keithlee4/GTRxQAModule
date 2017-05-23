@@ -9,6 +9,7 @@
 import Foundation
 import RxSwift
 
+///基本處理QA的協定
 protocol RxQAHandlerInterface {
     
     /// 轉換二維時的陣列寬度
@@ -16,6 +17,7 @@ protocol RxQAHandlerInterface {
     
     /// 對應QA List的picked QA
     var pickedQA: [Int : Variable<QA?>] { get set }
+    func pickedQA(ofIdx idx: Int) -> Variable<QA?>
     
     var originQAs: [QA] { get set }
     
@@ -39,12 +41,26 @@ protocol RxQAHandlerInterface {
     mutating func parse(qasFromFetcher qas: [QA]) -> [Variable<[QA]>]
 }
 
+///可以自定義問題的處理協定
+protocol RxCustomizableQAHandlerInterface {
+    /// 將自定義問題加入問題清單
+    ///
+    /// - Parameters:
+    ///   - qa:
+    ///   - idx:
+    mutating func addCustomizedQA(qa: QA, toIdxQContainer idx: Int)
+}
+
 class RxBasicQAHandler: RxQAHandlerInterface {
     internal var originQAs: [QA] = []
     
     var numOfQContainers: Int = 3
     var pickedQA: [Int : Variable<QA?>] = [ : ]
     var disposeBag: DisposeBag = DisposeBag.init()
+    
+    func pickedQA(ofIdx idx: Int) -> Variable<QA?> {
+        return pickedQA[idx] ?? Variable.init(nil)
+    }
     
     func pick(idx: Int, QA: QA) {
         pickedQA[idx]?.value = QA
@@ -91,13 +107,13 @@ class RxBasicQAHandler: RxQAHandlerInterface {
         return result
     }
     
+    func curQAsVarOfSourceIdx(idx: Int) -> Variable<[QA]>? {
+        return QAModuleManager.moduleInUse.storage.qasList?[idx]
+    }
+    
     //找到目前Storage問題清單裡對應idx裡的QAs Value
     private func curQAsOfSourceIdx(idx: Int) -> [QA]? {
-        if let nowQAVarOfSourceIdx = QAModule.sharedInstance.storage.qasList?[idx] {
-            return nowQAVarOfSourceIdx.value
-        }else {
-            return nil
-        }
+        return curQAsVarOfSourceIdx(idx: idx)?.value
     }
 
     /// 更新目前對應idx的問題清單
@@ -106,7 +122,7 @@ class RxBasicQAHandler: RxQAHandlerInterface {
     ///   - idx:
     ///   - newQAs:
     private func updateCurQas(sourceIdx idx: Int, toQAs newQAs: [QA]) {
-        guard let nowQAVarOfSourceIdx = QAModule.sharedInstance.storage.qasList?[idx] else {
+        guard let nowQAVarOfSourceIdx = QAModuleManager.moduleInUse.storage.qasList?[idx] else {
             print("Warning: cannot find idx \(idx) in source idx array, won't do any update")
             return
         }
@@ -152,5 +168,20 @@ class RxBasicQAHandler: RxQAHandlerInterface {
         
         let updatedSource = originSource
         updateCurQas(sourceIdx: sourceIdx, toQAs: updatedSource)
+    }
+}
+
+
+class RxCustomizableQAHandler: RxBasicQAHandler, RxCustomizableQAHandlerInterface {
+    func addCustomizedQA(qa: QA, toIdxQContainer idx: Int) {
+        qa.qNo = QA.customizedQAId
+        guard let list = QAModuleManager.moduleInUse.storage.qasList else {
+            print("Warning - qas list is nil in storage")
+            print("Won't add any customized qa")
+            return
+        }
+        
+        let targetVar = list[idx]
+        targetVar.value.append(qa)
     }
 }

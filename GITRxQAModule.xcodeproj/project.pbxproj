@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6459E43F1ED3D43D006B009D /* BasicQAView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6459E43E1ED3D43D006B009D /* BasicQAView.swift */; };
+		6459E4411ED3E14D006B009D /* BasicQAView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6459E4401ED3E14D006B009D /* BasicQAView.xib */; };
 		8B17578C1ED2DA2700963F51 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B17578B1ED2DA2700963F51 /* AppDelegate.swift */; };
 		8B17578E1ED2DA2700963F51 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B17578D1ED2DA2700963F51 /* ViewController.swift */; };
 		8B1757911ED2DA2700963F51 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B17578F1ED2DA2700963F51 /* Main.storyboard */; };
@@ -19,12 +21,17 @@
 		8B1757A81ED2E05E00963F51 /* Handler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1757A71ED2E05E00963F51 /* Handler.swift */; };
 		8B1757AA1ED2E07300963F51 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1757A91ED2E07300963F51 /* Validator.swift */; };
 		8B1757AE1ED2F84D00963F51 /* RxQAViewInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1757AD1ED2F84D00963F51 /* RxQAViewInterface.swift */; };
+		8BFBBE361ED41D4300053CEB /* QAModuleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFBBE351ED41D4300053CEB /* QAModuleManager.swift */; };
+		8BFBBE381ED42BCB00053CEB /* CustomizableQAView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFBBE371ED42BCB00053CEB /* CustomizableQAView.swift */; };
+		8BFBBE3A1ED42BD300053CEB /* CustomizableQAView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BFBBE391ED42BD300053CEB /* CustomizableQAView.xib */; };
 		D98AC1578E5931645238BA22 /* Pods_GITRxQAModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 046AF1C8B5C213E1B17718F0 /* Pods_GITRxQAModule.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		046AF1C8B5C213E1B17718F0 /* Pods_GITRxQAModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GITRxQAModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		068A6000BD00ED896640C1AC /* Pods-GITRxQAModule.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GITRxQAModule.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GITRxQAModule/Pods-GITRxQAModule.debug.xcconfig"; sourceTree = "<group>"; };
+		6459E43E1ED3D43D006B009D /* BasicQAView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicQAView.swift; sourceTree = "<group>"; };
+		6459E4401ED3E14D006B009D /* BasicQAView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BasicQAView.xib; sourceTree = "<group>"; };
 		8B1757881ED2DA2700963F51 /* GITRxQAModule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GITRxQAModule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B17578B1ED2DA2700963F51 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B17578D1ED2DA2700963F51 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -39,6 +46,9 @@
 		8B1757A71ED2E05E00963F51 /* Handler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Handler.swift; sourceTree = "<group>"; };
 		8B1757A91ED2E07300963F51 /* Validator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		8B1757AD1ED2F84D00963F51 /* RxQAViewInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxQAViewInterface.swift; sourceTree = "<group>"; };
+		8BFBBE351ED41D4300053CEB /* QAModuleManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QAModuleManager.swift; sourceTree = "<group>"; };
+		8BFBBE371ED42BCB00053CEB /* CustomizableQAView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomizableQAView.swift; sourceTree = "<group>"; };
+		8BFBBE391ED42BD300053CEB /* CustomizableQAView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomizableQAView.xib; sourceTree = "<group>"; };
 		8DF236CC44BFEC24659D91D3 /* Pods-GITRxQAModule.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GITRxQAModule.release.xcconfig"; path = "Pods/Target Support Files/Pods-GITRxQAModule/Pods-GITRxQAModule.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,8 +102,13 @@
 		8B17578A1ED2DA2700963F51 /* GITRxQAModule */ = {
 			isa = PBXGroup;
 			children = (
+				8BFBBE341ED41D3100053CEB /* Manager */,
 				8B17579D1ED2DB0900963F51 /* Module */,
 				8B17578B1ED2DA2700963F51 /* AppDelegate.swift */,
+				8BFBBE371ED42BCB00053CEB /* CustomizableQAView.swift */,
+				8BFBBE391ED42BD300053CEB /* CustomizableQAView.xib */,
+				6459E43E1ED3D43D006B009D /* BasicQAView.swift */,
+				6459E4401ED3E14D006B009D /* BasicQAView.xib */,
 				8B17578D1ED2DA2700963F51 /* ViewController.swift */,
 				8B17578F1ED2DA2700963F51 /* Main.storyboard */,
 				8B1757921ED2DA2700963F51 /* Assets.xcassets */,
@@ -139,6 +154,14 @@
 				8B1757AD1ED2F84D00963F51 /* RxQAViewInterface.swift */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		8BFBBE341ED41D3100053CEB /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				8BFBBE351ED41D4300053CEB /* QAModuleManager.swift */,
+			);
+			name = Manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,9 +227,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BFBBE3A1ED42BD300053CEB /* CustomizableQAView.xib in Resources */,
 				8B1757961ED2DA2700963F51 /* LaunchScreen.storyboard in Resources */,
 				8B1757931ED2DA2700963F51 /* Assets.xcassets in Resources */,
 				8B1757911ED2DA2700963F51 /* Main.storyboard in Resources */,
+				6459E4411ED3E14D006B009D /* BasicQAView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,13 +292,16 @@
 			files = (
 				8B1757AA1ED2E07300963F51 /* Validator.swift in Sources */,
 				8B1757A81ED2E05E00963F51 /* Handler.swift in Sources */,
+				8BFBBE381ED42BCB00053CEB /* CustomizableQAView.swift in Sources */,
 				8B17578E1ED2DA2700963F51 /* ViewController.swift in Sources */,
 				8B1757A21ED2DB9600963F51 /* QA.swift in Sources */,
 				8B1757A41ED2DF1000963F51 /* QAModule.swift in Sources */,
+				6459E43F1ED3D43D006B009D /* BasicQAView.swift in Sources */,
 				8B17578C1ED2DA2700963F51 /* AppDelegate.swift in Sources */,
 				8B1757AE1ED2F84D00963F51 /* RxQAViewInterface.swift in Sources */,
 				8B17579F1ED2DB2A00963F51 /* Fetcher.swift in Sources */,
 				8B1757A61ED2E05500963F51 /* Storage.swift in Sources */,
+				8BFBBE361ED41D4300053CEB /* QAModuleManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

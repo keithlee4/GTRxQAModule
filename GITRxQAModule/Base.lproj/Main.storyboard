@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GITRxQAModule" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,8 +21,43 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wcb-Zn-QHR">
+                                <rect key="frame" x="36" y="37.5" width="303" height="184"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0kD-hK-FSV">
+                                <rect key="frame" x="36" y="241.5" width="303" height="184"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="184" id="YcB-31-nQ0"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oFS-xx-AMD">
+                                <rect key="frame" x="36" y="445.5" width="303" height="184"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="oFS-xx-AMD" firstAttribute="height" secondItem="wcb-Zn-QHR" secondAttribute="height" id="62K-Py-Pay"/>
+                            <constraint firstItem="0kD-hK-FSV" firstAttribute="top" secondItem="wcb-Zn-QHR" secondAttribute="bottom" constant="20" id="HgW-Xz-cvl"/>
+                            <constraint firstItem="0kD-hK-FSV" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Jg0-dn-3ri"/>
+                            <constraint firstItem="oFS-xx-AMD" firstAttribute="leading" secondItem="0kD-hK-FSV" secondAttribute="leading" id="K0k-Gn-HHN"/>
+                            <constraint firstItem="oFS-xx-AMD" firstAttribute="trailing" secondItem="0kD-hK-FSV" secondAttribute="trailing" id="KRG-Tu-c0W"/>
+                            <constraint firstItem="wcb-Zn-QHR" firstAttribute="leading" secondItem="0kD-hK-FSV" secondAttribute="leading" id="LFY-Jq-h7b"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0kD-hK-FSV" secondAttribute="trailing" constant="20" id="PRR-vM-xM3"/>
+                            <constraint firstItem="wcb-Zn-QHR" firstAttribute="trailing" secondItem="0kD-hK-FSV" secondAttribute="trailing" id="QJC-wh-Nl3"/>
+                            <constraint firstItem="0kD-hK-FSV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="Stw-KE-QOs"/>
+                            <constraint firstItem="oFS-xx-AMD" firstAttribute="top" secondItem="0kD-hK-FSV" secondAttribute="bottom" constant="20" id="VQZ-LQ-sok"/>
+                            <constraint firstItem="0kD-hK-FSV" firstAttribute="height" secondItem="wcb-Zn-QHR" secondAttribute="height" id="eok-Rn-f6e"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="qaBaseView1" destination="wcb-Zn-QHR" id="uD0-s8-Wpz"/>
+                        <outlet property="qaBaseView2" destination="0kD-hK-FSV" id="KTu-58-YMZ"/>
+                        <outlet property="qaBaseView3" destination="oFS-xx-AMD" id="V9z-qX-Cs1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
